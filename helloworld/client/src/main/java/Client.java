@@ -1,9 +1,4 @@
 import java.net.Inet4Address;
-import java.util.Arrays;
-
-import com.zeroc.Ice.ObjectAdapter;
-import com.zeroc.Ice.ObjectPrx;
-import com.zeroc.Ice.Util;
 
 public class Client {
     public static void main(String[] args) {

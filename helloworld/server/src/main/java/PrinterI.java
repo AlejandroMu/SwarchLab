@@ -1,4 +1,3 @@
-import com.zeroc.Ice.Current;
 
 public class PrinterI implements Demo.Printer {
 
