@@ -10,7 +10,7 @@ for h in ${lab[@]}; do
     for i in $hosts; do
         echo "--------------------"
         echo "host $h$i"
-        sshpass -p swarch ssh swarch@$h$i $@
+        sshpass -p -- ssh swarch@$h$i $@
         echo "--------------------"
         echo ""
     done
