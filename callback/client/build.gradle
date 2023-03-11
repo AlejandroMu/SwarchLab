@@ -1,0 +1,18 @@
+slice {
+    java {
+        files = [file("../Callback.ice")]
+    }
+}
+dependencies{
+    compile project(':RMReciver')
+}
+
+jar {
+    manifest {
+        attributes(
+            "Main-Class" : "Client",
+            "Class-Path": configurations.runtimeClasspath.resolve().collect {
+            it.toURI() }.join(' ')
+        )
+    }
+}

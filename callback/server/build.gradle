@@ -1,0 +1,21 @@
+slice {
+    java {
+        files = [file("../Callback.ice")]
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.zeroc:ice:3.7.1'
+}
+jar {
+    manifest {
+        attributes(
+            "Main-Class" : "Server",
+            "Class-Path": configurations.runtimeClasspath.resolve().collect {
+            it.toURI() }.join(' ')
+        )
+    }
+}

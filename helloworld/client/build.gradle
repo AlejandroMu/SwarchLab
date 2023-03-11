@@ -1,0 +1,23 @@
+slice {
+    java {
+        files = [file("../Printer.ice")]
+    }
+}
+repositories {
+    mavenCentral()
+}
+dependencies{
+    compile 'com.zeroc:ice:3.7.1'
+
+    implementation project(":serverHw")
+
+}
+jar {
+    manifest {
+        attributes(
+            "Main-Class" : project.name.capitalize(),
+            "Class-Path": configurations.runtimeClasspath.resolve().collect {
+            it.toURI() }.join(' ')
+        )
+    }
+}

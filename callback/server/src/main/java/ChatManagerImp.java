@@ -36,10 +36,17 @@ public class ChatManagerImp implements Demo.ChatManager {
     @Override
     public void sendMessage(String msg, Current current) {
 
-        System.out.println("new Message: " + msg);
-        messages.add(msg);
+        new Thread(() -> {
+            System.out.println("new Message: " + msg);
+            messages.add(msg);
+            try {
 
-        callbackPrx.notifyCallback();
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+            callbackPrx.notifyCallback();
+        }).start();
     }
 
 }

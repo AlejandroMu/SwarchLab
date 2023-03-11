@@ -29,11 +29,12 @@ public class Client {
                 System.out.println("hostname: " + hostname);
 
                 chatManagerPrx.sendMessage(hostname + ": Hello World");
-
-                communicator.waitForShutdown();
+                MessageRec ms = new MessageRec();
+                ms.reciveMessage("Hello Callback");
 
             } catch (Exception e) {
-                // TODO: handle exception
+                // saveMessage(dest,)
+                e.printStackTrace();
             }
         }
 
