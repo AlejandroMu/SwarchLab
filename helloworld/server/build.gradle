@@ -13,7 +13,7 @@ dependencies {
 jar {
     manifest {
         attributes(
-            "Main-Class" : project.name.capitalize(),
+            "Main-Class" : "Server",
             "Class-Path": configurations.runtimeClasspath.resolve().collect {
             it.toURI() }.join(' ')
         )
